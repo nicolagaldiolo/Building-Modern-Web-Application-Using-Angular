@@ -28,5 +28,4 @@ class HelloWorldAppComponent {}
 })
 class HelloWorldAppModule {}
 
-platformBrowserDynamic().bootstrapModule(HelloWorldAppModule); // bootstrapModule è un motodo del modulo platformBrowserDynamic 
-// che mi permette di fare il boostrap del mio modulo principale
+platformBrowserDynamic().bootstrapModule(HelloWorldAppModule); // bootstrapModule è un motodo del modulo platformBrowserDynamic che mi permette di fare il boostrap del mio modulo principale
