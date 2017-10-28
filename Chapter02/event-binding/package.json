@@ -1,5 +1,5 @@
 {
-  "name": "interpolation-syntax",
+  "name": "event-binding",
   "version": "1.0.0",
   "scripts": {
     "prestart": "npm run build",

@@ -1,5 +1,5 @@
 {
-  "name": "interpolation-syntax",
+  "name": "event-binding",
   "version": "1.0.0",
   "scripts": {
     "prestart": "npm run build",
@@ -11,6 +11,7 @@
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.4.6",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "core-js": "^2.4.1",

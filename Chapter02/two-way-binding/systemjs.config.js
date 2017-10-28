@@ -6,6 +6,7 @@
     },
     map: { // map indica dove cercare i file javascript
       '@angular/core': 'ng:core/bundles/core.umd.js',
+      '@angular/forms': 'ng:forms/bundles/forms.umd.js',
       '@angular/common': 'ng:common/bundles/common.umd.js',
       '@angular/compiler': 'ng:compiler/bundles/compiler.umd.js',
       '@angular/platform-browser': 'ng:platform-browser/bundles/platform-browser.umd.js',

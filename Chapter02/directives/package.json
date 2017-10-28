@@ -1,5 +1,5 @@
 {
-  "name": "interpolation-syntax",
+  "name": "directives",
   "version": "1.0.0",
   "scripts": {
     "prestart": "npm run build",
