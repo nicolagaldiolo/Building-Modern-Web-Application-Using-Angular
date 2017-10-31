@@ -7,9 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var mock_books_1 = require("./mock-books");
 var AppComponent = (function () {
     function AppComponent() {
+        this.bookList = mock_books_1.BOOKS;
     }
+    AppComponent.prototype.getBookDetails = function (isbn) {
+        var arrayBook = this.bookList.filter(function (book) { return book.isbn === isbn; });
+        this.selectedBook = arrayBook[0];
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
