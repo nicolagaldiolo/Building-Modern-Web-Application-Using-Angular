@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Versione di Javascript utilizzata
+    "module": "commonjs", // Sistema di moduli utilizzato
+    "moduleResolution": "node", // Motore di modulazione utilizzato
+    "sourceMap": true, // Se true genera i file .map per i file JS
+    "emitDecoratorMetadata": true, // Se true abilita l'output di Javascript di creare i metadata per i decoratori
+    "experimentalDecorators": true, // Se true abilita il supporto sperimentale per i decoratori es7
+    "lib": [ // specifica le librerie da includere nella compilazione
+      "es2015",
+      "dom"
+    ],
+    "noImplicitAny": true, // Solleva errori se usiamo any in espressioni o dichiarazioni
+    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": [
+      "node_modules/@types/"
+    ]
+  },
+  "compileOnSave": true,
+  "exclude": [
+    "node_modules/*"
+  ]
+}
