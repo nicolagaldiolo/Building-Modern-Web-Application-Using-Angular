@@ -2,7 +2,6 @@
 // Il servizio è instanziato a livello di modulo e ha visibilità su tutto il modulo e componenti figli. è qualcosa che sta al di sopra dei componenti e vive in tutto il modulo.
 
 import { Injectable } from '@angular/core';
-import { ConsoleLoggerService } from './console-loggerservice';
 import { Book } from './book';
 import { BOOKS } from './mock-books';
 
@@ -11,13 +10,11 @@ import { BOOKS } from './mock-books';
 // all'interno di questo servizio e di conseguenza questa classe entra nel "ciclo di vita" di Angular
 
 export class BookStoreService {
-  constructor( private loggerService: ConsoleLoggerService){
-  }
 
   booksList: Book[] = BOOKS;
 
   getBooks() {
-    this.loggerService.log('Fetching book info')
+    console.log("Book Service (STATICO)");
     return this.booksList;
   }
 

@@ -7,20 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var console_loggerservice_1 = require("./console-loggerservice");
 var mock_books_1 = require("./mock-books");
 var BookStoreService = (function () {
-    function BookStoreService(loggerService) {
-        this.loggerService = loggerService;
+    function BookStoreService() {
         this.booksList = mock_books_1.BOOKS;
     }
     BookStoreService.prototype.getBooks = function () {
-        this.loggerService.log('Fetching book info');
+        console.log("Book Service (STATICO)");
         return this.booksList;
     };
     BookStoreService.prototype.getBook = function (isbn) {
@@ -36,8 +31,6 @@ BookStoreService = __decorate([
     core_1.Injectable()
     // il decoratore @Injectable() di per sè non fa nulla, è un decoratore vuoto. Con il decoratore @Injectable stiamo dicendo che Angular può iniettare delle dipendenze
     // all'interno di questo servizio e di conseguenza questa classe entra nel "ciclo di vita" di Angular
-    ,
-    __metadata("design:paramtypes", [console_loggerservice_1.ConsoleLoggerService])
 ], BookStoreService);
 exports.BookStoreService = BookStoreService;
 //# sourceMappingURL=book-store.service.js.map
