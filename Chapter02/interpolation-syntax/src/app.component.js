@@ -11,13 +11,13 @@ var AppComponent = (function () {
     function AppComponent() {
         this.message = 'Data Binding in Angular - Interpolation Syntax';
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'display-data-app',
+            template: "\n    <h1>{{message}}</h1>\n    <input type=\"text\" value=\"{{message}}\" />\n  "
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'display-data-app',
-        template: "\n    <h1>{{message}}</h1>\n    <input type=\"text\" value=\"{{message}}\" />\n  "
-    })
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

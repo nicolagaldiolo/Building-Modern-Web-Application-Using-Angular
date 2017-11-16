@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
     selector: 'app-root',
     template: `
         <div class="container p-4">
-            <h1 class="mt-4">{{timerOnlyObservable | async}}</h1>
+            <h1 class="mt-4">{{timerOnlyObservable | async | date: 'mediumTime'}}</h1> <!-- Il pipe async sottoscrive un observable internamente e torna l'ultimo valore emesso -->
             <h1 class="mt-4">{{timer}}</h1>
         </div>
     `

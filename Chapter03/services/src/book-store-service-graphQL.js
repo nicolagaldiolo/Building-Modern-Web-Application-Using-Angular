@@ -22,12 +22,12 @@ var BookStoreServiceGraphQL = (function () {
         this.booksList = this.booksList.filter(function (book) { return book.isbn !== isbn; });
         return this.booksList;
     };
+    BookStoreServiceGraphQL = __decorate([
+        core_1.Injectable()
+        // il decoratore @Injectable() di per sè non fa nulla, è un decoratore vuoto. Con il decoratore @Injectable stiamo dicendo che Angular può iniettare delle dipendenze
+        // all'interno di questo servizio e di conseguenza questa classe entra nel "ciclo di vita" di Angular
+    ], BookStoreServiceGraphQL);
     return BookStoreServiceGraphQL;
 }());
-BookStoreServiceGraphQL = __decorate([
-    core_1.Injectable()
-    // il decoratore @Injectable() di per sè non fa nulla, è un decoratore vuoto. Con il decoratore @Injectable stiamo dicendo che Angular può iniettare delle dipendenze
-    // all'interno di questo servizio e di conseguenza questa classe entra nel "ciclo di vita" di Angular
-], BookStoreServiceGraphQL);
 exports.BookStoreServiceGraphQL = BookStoreServiceGraphQL;
 //# sourceMappingURL=book-store-service-graphQL.js.map

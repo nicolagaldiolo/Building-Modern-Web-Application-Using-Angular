@@ -25,7 +25,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
-        template: "\n        <div class=\"container p-4\">\n            <h1 class=\"mt-4\">{{timerOnlyObservable | async}}</h1>\n            <h1 class=\"mt-4\">{{timer}}</h1>\n        </div>\n    "
+        template: "\n        <div class=\"container p-4\">\n            <h1 class=\"mt-4\">{{timerOnlyObservable | async | date: 'mediumTime'}}</h1> <!-- Il pipe async sottoscrive un observable internamente e torna l'ultimo valore emesso -->\n            <h1 class=\"mt-4\">{{timer}}</h1>\n        </div>\n    "
     })
     // GENERALMENTE POSSO ACCEDERE AI VALORI DI UN OBSERVABLE SOLO CON IL METODO subscribe() IN QUANTO UN OBSERVABLE è UN OGGETTO.
     // ANGULAR METTE A DISPOSIZIONE IL PIPE async CHE MI PERMETTE DI ACCEDERE AD UN VALORE EMESSO DA UN OBESERVABLE DIRETTAMENTE NELLA VIEW.

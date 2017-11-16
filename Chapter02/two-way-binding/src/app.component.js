@@ -11,13 +11,13 @@ var AppComponent = (function () {
     function AppComponent() {
         this.message = 'Angular - Event Binding';
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'two-way-binding-app',
+            template: "\n    <p>{{message}}</p>\n    <input type=\"text\" [(ngModel)]=\"message\" />\n  "
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'two-way-binding-app',
-        template: "\n    <p>{{message}}</p>\n    <input type=\"text\" [(ngModel)]=\"message\" />\n  "
-    })
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

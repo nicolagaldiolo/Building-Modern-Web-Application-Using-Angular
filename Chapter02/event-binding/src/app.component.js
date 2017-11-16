@@ -14,13 +14,13 @@ var AppComponent = (function () {
     AppComponent.prototype.showMessage = function (onKeyPressEvent) {
         this.message = onKeyPressEvent.target.value;
     };
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'event-data-app',
+            template: "\n    <p>{{message}}</p>\n    <input type=\"text\" (keypress)=\"showMessage($event)\" />\n  "
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'event-data-app',
-        template: "\n    <p>{{message}}</p>\n    <input type=\"text\" (keypress)=\"showMessage($event)\" />\n  "
-    })
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

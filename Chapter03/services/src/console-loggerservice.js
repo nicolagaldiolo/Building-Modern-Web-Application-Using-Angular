@@ -13,10 +13,10 @@ var ConsoleLoggerService = (function () {
     ConsoleLoggerService.prototype.log = function (message) {
         console.log(message);
     };
+    ConsoleLoggerService = __decorate([
+        core_1.Injectable()
+    ], ConsoleLoggerService);
     return ConsoleLoggerService;
 }());
-ConsoleLoggerService = __decorate([
-    core_1.Injectable()
-], ConsoleLoggerService);
 exports.ConsoleLoggerService = ConsoleLoggerService;
 //# sourceMappingURL=console-loggerservice.js.map

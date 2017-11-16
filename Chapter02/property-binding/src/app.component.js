@@ -9,16 +9,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.message = 'Data Binding in Angular - Interpolation Syntax';
-        this.colspan = '3';
+        this.message = 'Data Binding in Angular - Property Binding';
+        this.colspan = 3;
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'display-data-app',
+            template: "\n    <h1 [textContent]=\"message\"></h1>\n    <input type=\"text\" [value]=\"message\" />\n    <table>\n      <tr>\n        <td [attr.colspan]=\"colspan\" [textContent]=\"message\"></td>\n      </tr>\n    </table>\n  "
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'display-data-app',
-        template: "\n    <h1 [textContent]=\"message\"></h1>\n    <input type=\"text\" [value]=\"message\" />\n    <table>\n      <tr>\n        <td [attr.colspan]=\"colspan\" [textContent]=\"message\"></td>\n      </tr>\n    </table>\n  "
-    })
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
