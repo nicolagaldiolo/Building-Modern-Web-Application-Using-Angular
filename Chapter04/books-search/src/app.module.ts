@@ -11,7 +11,8 @@ import { BookSearchComponent } from './books/index';
     AppComponent,
     BookSearchComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule {
 }

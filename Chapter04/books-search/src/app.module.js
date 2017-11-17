@@ -23,7 +23,7 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             index_1.BookSearchComponent
         ],
-        bootstrap: [app_component_1.AppComponent]
+        bootstrap: [app_component_1.AppComponent],
     })
 ], AppModule);
 exports.AppModule = AppModule;

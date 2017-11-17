@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var index_1 = require("./books/index");
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -18,7 +19,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
-        template: "\n    <div class=\"container\">\n      <book-search></book-search>\n    </div>\n  "
+        template: "\n    <div class=\"container\">\n      <book-search></book-search>\n    </div>\n  ",
+        providers: [index_1.BookStoreService]
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);

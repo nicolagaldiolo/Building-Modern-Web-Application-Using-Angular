@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BookStoreService, Book } from './books/index';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,8 @@ import { Component } from '@angular/core';
     <div class="container">
       <book-search></book-search>
     </div>
-  `
+  `,
+  providers: [BookStoreService]
 })
 export class AppComponent {
 
