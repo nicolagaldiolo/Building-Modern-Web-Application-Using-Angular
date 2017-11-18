@@ -25,10 +25,10 @@ var BookStoreService = (function () {
             this.booksList.filter(function (book) { return new RegExp(title, 'gi').test(book.title); }) :
             [];
     };
+    BookStoreService = __decorate([
+        core_1.Injectable()
+    ], BookStoreService);
     return BookStoreService;
 }());
-BookStoreService = __decorate([
-    core_1.Injectable()
-], BookStoreService);
 exports.BookStoreService = BookStoreService;
 //# sourceMappingURL=book-store.service.js.map

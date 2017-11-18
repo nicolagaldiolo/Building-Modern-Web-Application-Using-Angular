@@ -14,15 +14,15 @@ var index_1 = require("./books/index");
 var AppComponent = (function () {
     function AppComponent() {
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'app-root',
+            template: "\n    <div class=\"container\">\n      <book-search></book-search>\n    </div>\n  ",
+            providers: [index_1.BookStoreService]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'app-root',
-        template: "\n    <div class=\"container\">\n      <book-search></book-search>\n    </div>\n  ",
-        providers: [index_1.BookStoreService]
-    }),
-    __metadata("design:paramtypes", [])
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
