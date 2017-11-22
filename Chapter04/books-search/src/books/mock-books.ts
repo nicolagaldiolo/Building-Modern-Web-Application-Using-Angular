@@ -44,7 +44,7 @@ const MOCK_BOOKS: Book[] = [
     authors: "Ved Antani",
     published: "August 2016",
     description: "Unlock the powers of functional programming hidden within JavaScript to build smarter, cleaner, and more reliable web apps.",
-    coverImage: "https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9781787124660.jpg"
+    coverImage: "https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/I6935.jpg"
   },
   {
     id: 6,

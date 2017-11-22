@@ -10,19 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var index_1 = require("./books/index");
+var book_store_service_1 = require("./books/book-store.service");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(bookStoreService) {
+        this.bookStoreService = bookStoreService;
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'app-root',
-            template: "\n    <div class=\"container\">\n      <book-search></book-search>\n    </div>\n  ",
-            providers: [index_1.BookStoreService]
-        }),
-        __metadata("design:paramtypes", [])
-    ], AppComponent);
+    AppComponent.prototype.findBook = function (title) {
+        var _this = this;
+        this.bookStoreService.getBooks(title)
+            .subscribe(function (books) { return _this.filteredBook = books; });
+    };
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'app-root',
+        template: "\n    <div class=\"container\">\n      <book-search (search)=\"findBook($event)\"></book-search>\n      <books-list [books]=\"filteredBook\"></books-list>\n    </div>\n  ",
+        providers: [book_store_service_1.BookStoreService]
+    }),
+    __metadata("design:paramtypes", [book_store_service_1.BookStoreService])
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

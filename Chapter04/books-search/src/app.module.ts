@@ -3,13 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { BookSearchComponent } from './books/index';
+import { BookListComponent } from './books/book-list/books-list.component';
+import { BookSearchComponent } from './books/book-search/book-search.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [
     AppComponent,
-    BookSearchComponent
+    BookSearchComponent,
+    BookListComponent
   ],
   bootstrap: [AppComponent],
 

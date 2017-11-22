@@ -31,11 +31,11 @@ var AppComponent = (function () {
     };
     __decorate([
         core_1.ViewChild('btn'),
-        __metadata("design:type", core_1.ElementRef)
+        __metadata("design:type", typeof (_a = typeof core_1.ElementRef !== "undefined" && core_1.ElementRef) === "function" && _a || Object)
     ], AppComponent.prototype, "btn", void 0);
     __decorate([
         core_1.ViewChild('text'),
-        __metadata("design:type", core_1.ElementRef)
+        __metadata("design:type", typeof (_b = typeof core_1.ElementRef !== "undefined" && core_1.ElementRef) === "function" && _b || Object)
     ], AppComponent.prototype, "text", void 0);
     AppComponent = __decorate([
         core_1.Component({
@@ -44,6 +44,7 @@ var AppComponent = (function () {
         })
     ], AppComponent);
     return AppComponent;
+    var _a, _b;
 }());
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

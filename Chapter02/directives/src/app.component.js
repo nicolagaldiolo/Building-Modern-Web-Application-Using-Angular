@@ -30,13 +30,13 @@ var AppComponent = (function () {
         };
         return classes;
     };
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'directives',
+            template: "\n    <h1>ngIf</h1>\n    <h3>elemento visibile</h3>\n    <p *ngIf=\"visible\"> {{message}} </p>\n    <h3>elemento nascosto</h3>\n    <p *ngIf=\"hide\"> {{message}} </p>\n    <hr>\n    <h1>ngFor</h1>\n    <ul>\n      <li *ngFor=\"let item of frameworks\">{{item}}</li>\n    </ul>\n    <hr>\n    <h1>ngSwitch</h1>\n    <div [ngSwitch]=\"selectedCar\">\n      <template [ngSwitchCase]=\"'Bugatti'\">I am a Bugatti</template>\n      <template [ngSwitchCase]=\"'Ferrari'\">I am a Ferrari</template>\n      <template [ngSwitchCase]=\"'Bugatti'\">I am a Mercedes</template>\n      <template ngSwitchDefault>I am somebody else</template>\n    </div>\n    <hr>\n    <h1>ngStyle</h1>\n    <p [ngStyle]=\"getInlineStyles(myString)\">{{myString}}</p>\n    <p [style.color]=\"myString.length > 2 ? 'red' : 'green'\">{{myString}}</p>\n    <hr>\n    <h1>ngClass</h1>\n    <p [ngClass]=\"getClasses(myString)\">{{myString}}</p>\n    <p [class.bolder]=\"myString.length > 2\">{{myString}}</p>\n  "
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'directives',
-        template: "\n    <h1>ngIf</h1>\n    <h3>elemento visibile</h3>\n    <p *ngIf=\"visible\"> {{message}} </p>\n    <h3>elemento nascosto</h3>\n    <p *ngIf=\"hide\"> {{message}} </p>\n    <hr>\n    <h1>ngFor</h1>\n    <ul>\n      <li *ngFor=\"let item of frameworks\">{{item}}</li>\n    </ul>\n    <hr>\n    <h1>ngSwitch</h1>\n    <div [ngSwitch]=\"selectedCar\">\n      <template [ngSwitchCase]=\"'Bugatti'\">I am a Bugatti</template>\n      <template [ngSwitchCase]=\"'Ferrari'\">I am a Ferrari</template>\n      <template [ngSwitchCase]=\"'Bugatti'\">I am a Mercedes</template>\n      <template ngSwitchDefault>I am somebody else</template>\n    </div>\n    <hr>\n    <h1>ngStyle</h1>\n    <p [ngStyle]=\"getInlineStyles(myString)\">{{myString}}</p>\n    <p [style.color]=\"myString.length > 2 ? 'red' : 'green'\">{{myString}}</p>\n    <hr>\n    <h1>ngClass</h1>\n    <p [ngClass]=\"getClasses(myString)\">{{myString}}</p>\n    <p [class.bolder]=\"myString.length > 2\">{{myString}}</p>\n  "
-    })
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
