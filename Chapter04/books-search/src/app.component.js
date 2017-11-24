@@ -20,15 +20,15 @@ var AppComponent = (function () {
         this.bookStoreService.getBooks(title)
             .subscribe(function (books) { return _this.filteredBook = books; });
     };
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'app-root',
+            template: "\n    <div class=\"container\">\n      <book-search (search)=\"findBook($event)\"></book-search>\n      <books-list [books]=\"filteredBook\"></books-list>\n    </div>\n  ",
+            providers: [book_store_service_1.BookStoreService]
+        }),
+        __metadata("design:paramtypes", [book_store_service_1.BookStoreService])
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'app-root',
-        template: "\n    <div class=\"container\">\n      <book-search (search)=\"findBook($event)\"></book-search>\n      <books-list [books]=\"filteredBook\"></books-list>\n    </div>\n  ",
-        providers: [book_store_service_1.BookStoreService]
-    }),
-    __metadata("design:paramtypes", [book_store_service_1.BookStoreService])
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

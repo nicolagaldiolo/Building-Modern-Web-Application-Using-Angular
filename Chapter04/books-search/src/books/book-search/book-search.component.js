@@ -51,27 +51,27 @@ var BookSearchComponent = (function () {
         this.bookTitles = [];
         this.search.emit(this.searchInputTerm);
     };
+    __decorate([
+        core_1.ViewChild('searchInput'),
+        __metadata("design:type", core_1.ElementRef)
+    ], BookSearchComponent.prototype, "searchInputAliasName", void 0);
+    __decorate([
+        core_1.ViewChild('suggestions'),
+        __metadata("design:type", core_1.ElementRef)
+    ], BookSearchComponent.prototype, "suggestionsAliasName", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], BookSearchComponent.prototype, "search", void 0);
+    BookSearchComponent = __decorate([
+        core_1.Component({
+            selector: 'book-search',
+            template: "\n    <h3 class=\"page-title\">Book Search</h3>\n    <div class=\"search-container\">\n      <div class=\"books-search-form\">\n        <input type=\"text\" #searchInput class=\"search-input\" placeholder=\"Book title (es: Javascript)\" [(ngModel)]=\"searchInputTerm\">\n        <button class=\"btn btn-primary\" (click)=\"searchBooks()\" >Search</button>\n      </div>\n      <ul class=\"title-suggestion-list\" #suggestions [style.display]=\"bookTitles.length > 0 ? 'block' : 'none'\">\n        <li *ngFor=\"let bookTitle of bookTitles\">{{bookTitle}}</li>\n      </ul>\n    </div>\n  ",
+            styleUrls: ['./book-search.component.css']
+        }),
+        __metadata("design:paramtypes", [book_store_service_1.BookStoreService])
+    ], BookSearchComponent);
     return BookSearchComponent;
 }());
-__decorate([
-    core_1.ViewChild('searchInput'),
-    __metadata("design:type", core_1.ElementRef)
-], BookSearchComponent.prototype, "searchInputAliasName", void 0);
-__decorate([
-    core_1.ViewChild('suggestions'),
-    __metadata("design:type", core_1.ElementRef)
-], BookSearchComponent.prototype, "suggestionsAliasName", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], BookSearchComponent.prototype, "search", void 0);
-BookSearchComponent = __decorate([
-    core_1.Component({
-        selector: 'book-search',
-        template: "\n    <h3 class=\"page-title\">Book Search</h3>\n    <div class=\"search-container\">\n      <div class=\"books-search-form\">\n        <input type=\"text\" #searchInput class=\"search-input\" placeholder=\"Book title (es: Javascript)\" [(ngModel)]=\"searchInputTerm\">\n        <button class=\"btn btn-primary\" (click)=\"searchBooks()\" >Search</button>\n      </div>\n      <ul class=\"title-suggestion-list\" #suggestions [style.display]=\"bookTitles.length > 0 ? 'block' : 'none'\">\n        <li *ngFor=\"let bookTitle of bookTitles\">{{bookTitle}}</li>\n      </ul>\n    </div>\n  ",
-        styleUrls: ['./book-search.component.css']
-    }),
-    __metadata("design:paramtypes", [book_store_service_1.BookStoreService])
-], BookSearchComponent);
 exports.BookSearchComponent = BookSearchComponent;
 //# sourceMappingURL=book-search.component.js.map

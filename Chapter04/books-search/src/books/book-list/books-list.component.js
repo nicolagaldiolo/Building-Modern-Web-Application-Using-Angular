@@ -14,18 +14,18 @@ var BookListComponent = (function () {
     function BookListComponent() {
         this.books = [];
     }
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], BookListComponent.prototype, "books", void 0);
+    BookListComponent = __decorate([
+        core_1.Component({
+            selector: 'books-list',
+            template: "\n    <div class=\"row mt-1\">\n      <div class=\"col-sm-12\">\n        <div class=\"row\">\n          <div *ngFor=\"let book of books\" class=\"col-sm-3 book-item\">\n            <div class=\"cover-image-container\">\n              <img [src]=\"book.coverImage\" alt=\"cover image\">\n              <span>{{book.title}}</span>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  ",
+            styleUrls: ['./books-list.component.css']
+        })
+    ], BookListComponent);
     return BookListComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], BookListComponent.prototype, "books", void 0);
-BookListComponent = __decorate([
-    core_1.Component({
-        selector: 'books-list',
-        template: "\n    <div class=\"row mt-1\">\n      <div class=\"col-sm-12\">\n        <div class=\"row\">\n          <div *ngFor=\"let book of books\" class=\"col-sm-3 book-item\">\n            <div class=\"cover-image-container\">\n              <img [src]=\"book.coverImage\" alt=\"cover image\">\n              <span>{{book.title}}</span>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  ",
-        styleUrls: ['./books-list.component.css']
-    })
-], BookListComponent);
 exports.BookListComponent = BookListComponent;
 //# sourceMappingURL=books-list.component.js.map
