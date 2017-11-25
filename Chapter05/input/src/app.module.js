@@ -7,23 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var RegistrationFormComponent = (function () {
-    function RegistrationFormComponent() {
-        this.user = {
-            firstName: 'Nicola',
-            lastName: 'Galdiolo',
-        };
+var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
+var app_component_1 = require("./app.component");
+var registration_form_component_1 = require("./registration-form/registration-form.component");
+var AppModule = (function () {
+    function AppModule() {
     }
-    RegistrationFormComponent.prototype.onSubmit = function (formValue) {
-        console.log(formValue);
-    };
-    return RegistrationFormComponent;
+    return AppModule;
 }());
-RegistrationFormComponent = __decorate([
-    core_1.Component({
-        selector: 'registration-form',
-        templateUrl: './registration-form.component.html'
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+        declarations: [app_component_1.AppComponent, registration_form_component_1.RegistrationFormComponent],
+        bootstrap: [app_component_1.AppComponent]
     })
-], RegistrationFormComponent);
-exports.RegistrationFormComponent = RegistrationFormComponent;
-//# sourceMappingURL=registration-form.component.js.map
+], AppModule);
+exports.AppModule = AppModule;
+//# sourceMappingURL=app.module.js.map

@@ -7,16 +7,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var RegistrationFormComponent = (function () {
+    function RegistrationFormComponent() {
+        this.user = {
+            firstName: 'Nicola',
+            lastName: 'Galdiolo',
+        };
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'forms-app',
-            template: '<registration-reactive-form></registration-reactive-form>'
-        })
-    ], AppComponent);
-    return AppComponent;
+    RegistrationFormComponent.prototype.onSubmit = function (formValue) {
+        console.log(formValue);
+    };
+    return RegistrationFormComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+RegistrationFormComponent = __decorate([
+    core_1.Component({
+        selector: 'registration-form',
+        templateUrl: './registration-form.component.html'
+    })
+], RegistrationFormComponent);
+exports.RegistrationFormComponent = RegistrationFormComponent;
+//# sourceMappingURL=registration-reactive-form.component.js.map

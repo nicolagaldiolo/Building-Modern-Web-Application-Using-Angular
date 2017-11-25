@@ -9,21 +9,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var RegistrationFormComponent = (function () {
     function RegistrationFormComponent() {
-        this.user = {
-            firstName: 'Nicola',
-            lastName: 'Galdiolo',
-        };
+        this.EMAIL_REGEX = "[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*";
+        this.PASSWORD_STRENGTH_REGEX = "(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!@#\$%\^&\*]{8,}";
     }
     RegistrationFormComponent.prototype.onSubmit = function (formValue) {
         console.log(formValue);
     };
+    RegistrationFormComponent.prototype.onChange = function (formRef) {
+        console.log(formRef);
+    };
+    RegistrationFormComponent = __decorate([
+        core_1.Component({
+            selector: 'registration-form',
+            templateUrl: './registration-form.component.html'
+        })
+    ], RegistrationFormComponent);
     return RegistrationFormComponent;
 }());
-RegistrationFormComponent = __decorate([
-    core_1.Component({
-        selector: 'registration-form',
-        templateUrl: './registration-form.component.html'
-    })
-], RegistrationFormComponent);
 exports.RegistrationFormComponent = RegistrationFormComponent;
 //# sourceMappingURL=registration-form.component.js.map

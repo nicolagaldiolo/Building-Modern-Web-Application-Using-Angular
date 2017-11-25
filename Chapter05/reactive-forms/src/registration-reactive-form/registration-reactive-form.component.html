@@ -1,0 +1,55 @@
+<div class="row m-1">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">
+                <h2>Registration Form</h2>
+            </div>
+            <div class="box-divider"></div>
+            <div class="box-body">
+                <form novalidate [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm.value)">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>First name</label>
+                            <input type="text" class="form-control" formControlName="firstName">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Last name</label>
+                            <input type="text" class="form-control" formControlName="lastName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" formControlName="email">
+                        <div class="error-message" *ngIf="registrationForm.get('email').touched && registrationForm.get('email').hasError('required')">
+                            The email is required.
+                        </div>
+                        <div class="error-message" *ngIf="registrationForm.get('email').touched && registrationForm.get('email').hasError('pattern')">
+                            The email format should be <i>shravan@theshravan.net</i>
+                        </div>
+                    </div>
+                    <div formGroupName="address">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>Street</label>
+                                <input type="text" class="form-control" formControlName="street">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Country</label>
+                                <select class="form-control" formControlName="country">
+                                    <option value="">Select country</option>
+                                    <option value="IN">India</option>
+                                    <option value="US">United States of America</option>
+                                </select>
+                                <div class="error-message" *ngIf="registrationForm.get('address').get('country').touched &&
+                                                                  registrationForm.get('address').get('country').hasError('required') ">
+                                    The country is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary" [disabled]="registrationForm.invalid">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

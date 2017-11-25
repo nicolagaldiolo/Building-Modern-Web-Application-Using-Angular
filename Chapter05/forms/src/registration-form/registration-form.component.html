@@ -1,0 +1,107 @@
+<!--
+// PER IL FORM
+// #1 Per il tag FORM Non serve aggiungere la direttiva ngForm (Obj formGroup) in quanto Angular ogni volta
+// che incontra un form lo fa inplicitamente. (è possibile disattivare manuelemente questo comportamento con
+// la direttiva ngNoForm)
+
+// PER I CAMPI INPUT
+// #1 la direttiva ngModel fa diventare il campo input un oggetto angular (=Obj formControl)
+// #2 per accedere al valore o allo stato di un ngModel all'interno del template occorre creare una variabile di
+// riferimento per il campo input e assegnargli l'oggetto model es: #firstNameRef="ngModel"
+// #3 Se uso un ngModel dentro ad un tag form DEVO ASSOLUTAMENTE specificare un attributo name per il campo altrimenti
+// riceverò un errore in quanto angular mi crea un oggeto per il form con tutti i campi che trova all'interno e le
+// proprietà dell'oggetto sono i vari campi input quindi ogni campo inut deve avere un name.
+-->
+
+
+<div class="row m-1">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">
+                <h2>Registration Form</h2>
+            </div>
+            <div class="box-divider"></div>
+
+            <div class="box-body">
+                <form novalidate #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>First name</label>
+                            <input type="text" class="form-control" name="firstName" ngModel #firstNameRef="ngModel">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Last name</label>
+                            <input type="text" class="form-control" name="lastName" ngModel #lastNameRef="ngModel">
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" ngModel #emailRef="ngModel">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Enter Password</label>
+                            <input type="password" class="form-control" name="password" ngModel #passwordRef="ngModel">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" name="corfirmPassword" ngModel #confirmPasswordRef="ngModel">
+                        </div>
+                    </div>
+                    <div class="row" ngModelGroup="address" #addressRef="ngModelGroup">
+                        <div class="col-sm-6 form-group">
+                            <label>Street</label>
+                            <input type="text" class="form-control" name="street" ngModel #streetRef="ngModel">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>City</label>
+                            <input type="text" class="form-control" name="city" ngModel #cityRef="ngModel">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>State</label>
+                            <input type="text" class="form-control" name="state" ngModel #stateRef="ngModel">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Zip</label>
+                            <input type="text" class="form-control" name="zip" ngModel #zipRef="ngModel">
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label>Country</label>
+                            <select class="form-control" name="country" ngModel #countryRef="ngModel">
+                                <option value="IT">Italia</option>
+                                <option value="US">United States of America</option>
+                                <option value="EN">England</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <label>Gender</label>
+                            <div>
+                                <label class="check-label">
+                                    <input type="radio" name="gender" value="Male" ngModel #genderRef="ngModel">
+                                    <i class="blue"></i> Male
+                                </label>
+                                <div class="spacer"></div>
+                                <label class="check-label">
+                                    <input type="radio" name="gender" value="Female" ngModel #genderRef="ngModel">
+                                    <i class="blue"></i> Female
+                                </label>
+                                <div class="spacer"></div>
+                                <label class="check-label">
+                                    <input type="radio" name="gender" value="Other" ngModel #genderRef="ngModel">
+                                    <i class="blue"></i> Other
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label class="check-label">
+                                <input type="checkbox" name="agreement" value="" ngModel #agreementRef="ngModel">
+                                <i class="blue"></i> I gree to the terms of service
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
