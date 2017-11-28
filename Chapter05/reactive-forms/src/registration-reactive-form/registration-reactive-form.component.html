@@ -1,16 +1,21 @@
 <div class="row m-1">
-    <div class="col-md-12">
+    <div class="col-md-9">
         <div class="box">
             <div class="box-header">
                 <h2>Registration Form</h2>
             </div>
             <div class="box-divider"></div>
             <div class="box-body">
-                <form novalidate [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm.value)">
+                <!-- con i Reactive form uso la prop [formGroup] per fare il binding con l'oggetto registrationForm -->
+                <form novalidate [formGroup]="registrationForm" (change)="onChange(registrationForm)" (ngSubmit)="onSubmit(registrationForm.value)">
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <label>First name</label>
+                            <!-- con i Reactive form uso la direttiva formControlName per fare il binding con il form control firstName -->
                             <input type="text" class="form-control" formControlName="firstName">
+                            <div class="error-message" *ngIf="registrationForm.get('firstName').touched && registrationForm.get('firstName').hasError('required')">
+                                The first name is required.
+                            </div>
                         </div>
                         <div class="col-sm-6 form-group">
                             <label>Last name</label>
@@ -27,6 +32,42 @@
                             The email format should be <i>shravan@theshravan.net</i>
                         </div>
                     </div>
+                    <div formGroupName="passwordGroup">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>Enter Password</label>
+                                <input type="password" class="form-control" formControlName="password" >
+                                <div class="error-message" *ngIf="registrationForm.get('passwordGroup').get('password').touched && registrationForm.get('passwordGroup').get('password').hasError('required')">
+                                    The password is required.
+                                </div>
+                                <div class="error-message" *ngIf="registrationForm.get('passwordGroup').get('password').touched && registrationForm.get('passwordGroup').get('password').hasError('weakPassword')">
+                                    The password must be minimum 8 characters, must contain at least 1 lowercase alphabet, 1 uppercase
+                                    alphabet, 1 numeric character, 1 special character.
+                                </div>
+                                Oggetto password: <strong>{{registrationForm.get('passwordGroup').get('password').errors | json}}</strong>
+                                <hr>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" class="form-control" formControlName="confirmPassword">
+                                <div class="error-message" *ngIf="registrationForm.get('passwordGroup').get('confirmPassword').touched && registrationForm.get('passwordGroup').get('confirmPassword').hasError('required')">
+                                    The confirm password is required.
+                                </div>
+                                <div class="error-message" *ngIf="registrationForm.get('passwordGroup').get('confirmPassword').touched && registrationForm.get('passwordGroup').hasError('mismatch')">
+                                    The confirm password should match password.
+                                </div>
+                                Oggetto password: <strong>{{registrationForm.get('passwordGroup').errors | json}}</strong>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--
+                        dentro l'oggetto form (registrationForm) posso creare un altro gruppo (form group) per avere delle proprietà raggruppate,
+                        questo mi può tornare utile perchè ad esempio posso sapere anche lo stato di validazione di questo nuovo gruppo.
+                        Uso la direttiva formGroupName per fare il bind con l'oggetto address
+                    -->
+
                     <div formGroupName="address">
                         <div class="row">
                             <div class="col-sm-6 form-group">
@@ -34,16 +75,37 @@
                                 <input type="text" class="form-control" formControlName="street">
                             </div>
                             <div class="col-sm-6 form-group">
-                                <label>Country</label>
-                                <select class="form-control" formControlName="country">
-                                    <option value="">Select country</option>
-                                    <option value="IN">India</option>
-                                    <option value="US">United States of America</option>
-                                </select>
-                                <div class="error-message" *ngIf="registrationForm.get('address').get('country').touched &&
-                                                                  registrationForm.get('address').get('country').hasError('required') ">
-                                    The country is required.
+                                <label>City</label>
+                                <input type="text" class="form-control" formControlName="city">
+                                <div class="error-message" *ngIf="registrationForm.get('address').get('city').touched && registrationForm.get('address').get('city').hasError('required')">
+                                    The city is required.
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>State</label>
+                                <input type="text" class="form-control" formControlName="state">
+                                <div class="error-message" *ngIf="registrationForm.get('address').get('state').touched && registrationForm.get('address').get('state').hasError('required')">
+                                    The state is required.
+                                </div>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Zip</label>
+                                <input type="text" class="form-control" formControlName="zip">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <select class="form-control" formControlName="country">
+                                <option value="CA">Canada</option>
+                                <option value="IN">India</option>
+                                <option value="SW">Switzerland</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="US">United States of America</option>
+                            </select>
+                            <div class="error-message" *ngIf="registrationForm.get('address').get('country').touched && registrationForm.get('address').get('country').hasError('required')">
+                                The country is required.
                             </div>
                         </div>
                     </div>

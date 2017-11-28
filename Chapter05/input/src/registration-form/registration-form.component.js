@@ -17,13 +17,13 @@ var RegistrationFormComponent = (function () {
     RegistrationFormComponent.prototype.onSubmit = function (formValue) {
         console.log(formValue);
     };
+    RegistrationFormComponent = __decorate([
+        core_1.Component({
+            selector: 'registration-form',
+            templateUrl: './registration-form.component.html'
+        })
+    ], RegistrationFormComponent);
     return RegistrationFormComponent;
 }());
-RegistrationFormComponent = __decorate([
-    core_1.Component({
-        selector: 'registration-form',
-        templateUrl: './registration-form.component.html'
-    })
-], RegistrationFormComponent);
 exports.RegistrationFormComponent = RegistrationFormComponent;
-//# sourceMappingURL=registration-reactive-form.component.js.map
+//# sourceMappingURL=registration-form.component.js.map
