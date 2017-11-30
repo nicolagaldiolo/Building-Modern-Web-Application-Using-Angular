@@ -18,13 +18,13 @@ var RegistrationFormComponent = (function () {
     RegistrationFormComponent.prototype.onChange = function (formRef) {
         console.log(formRef);
     };
-    RegistrationFormComponent = __decorate([
-        core_1.Component({
-            selector: 'registration-form',
-            templateUrl: './registration-form.component.html'
-        })
-    ], RegistrationFormComponent);
     return RegistrationFormComponent;
 }());
+RegistrationFormComponent = __decorate([
+    core_1.Component({
+        selector: 'registration-form',
+        templateUrl: './registration-form.component.html'
+    })
+], RegistrationFormComponent);
 exports.RegistrationFormComponent = RegistrationFormComponent;
 //# sourceMappingURL=registration-form.component.js.map

@@ -12,7 +12,6 @@ export class CustomValidators {
     }
 
     static passwordMatcher(control: AbstractControl) { // essendo un metodo statico lo posso lanciare anche senza instanziare l'oggetto
-
         const password = control.get('password').value;
         const confirmPassword = control.get('confirmPassword').value;
 

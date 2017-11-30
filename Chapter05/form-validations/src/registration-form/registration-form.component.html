@@ -21,6 +21,9 @@
             </div>
             <div class="box-divider"></div>
             <div class="box-body">
+
+                <!-- l'attributo novalidate serve a disabilitare la validazione del browser così da poter gestire la validazione interamente in html5 -->
+
                 <form novalidate #formRef="ngForm" (change)="onChange(formRef)" (ngSubmit)="onSubmit(formRef.value)">
                     <div class="row">
                         <div class="col-sm-6 form-group">
@@ -54,8 +57,7 @@
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" name="email" ngModel #emailRef="ngModel" required
-                               [pattern]="EMAIL_REGEX">
+                        <input type="email" class="form-control" name="email" ngModel #emailRef="ngModel" required [pattern]="EMAIL_REGEX">
                         <div class="error-message" *ngIf="emailRef.touched && emailRef?.errors?.required">
                             The email is required.
                         </div>
@@ -63,28 +65,45 @@
                             The email format should be <i>shravan@theshravan.net</i>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-sm-6 form-group">
-                            <label>Enter Password</label>
-                            <input type="password" class="form-control" name="password" ngModel #passwordRef="ngModel" required
-                                   [pattern]="PASSWORD_STRENGTH_REGEX">
-                            <div class="error-message" *ngIf="passwordRef.touched && passwordRef?.errors?.required">
-                                The password is required.
-                            </div>
-                            <div class="error-message" *ngIf="passwordRef.touched && passwordRef?.errors?.pattern">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" ngModel #password="ngModel" required validateEqual="confirmPassword" reverse="true" [pattern]="PASSWORD_STRENGTH_REGEX">
+                            <div class="error-message" *ngIf="password.touched && password?.errors?.pattern">
                                 The password must be minimum 8 characters, must contain at least 1 lowercase alphabet, 1 uppercase
                                 alphabet, 1 numeric character, 1 special character.
                             </div>
+
+                            <div class="error-message" *ngIf="password.touched && password?.errors?.required">
+                                The password is required.
+                            </div>
+
+                            <div>
+                                <pre>Errori nel campo: {{password?.errors | json}}</pre>
+                            </div>
+
                         </div>
                         <div class="col-sm-6 form-group">
-                            <label>Confirm Password</label>
-                            <input type="password" class="form-control" name="confirmPassword" ngModel #confirmPassRef="ngModel"
-                                   required>
-                            <div class="error-message" *ngIf="confirmPassRef.touched && confirmPassRef?.errors?.required">
+                            <label>Retype password</label>
+                            <input type="password" class="form-control" name="confirmPassword" ngModel #confirmPassword="ngModel" required validateEqual="password">
+                            <div class="error-message" *ngIf="confirmPassword.touched && confirmPassword?.errors?.required">
                                 The confirm password is required.
                             </div>
+
+                            <div class="error-message" *ngIf="confirmPassword.touched && confirmPassword?.errors?.validateEqual">
+                                Password mismatch
+                            </div>
+
+
+                            <div>
+                                <pre>Errori nel campo: {{confirmPassword?.errors | json}}</pre>
+                                <pre>Il campo è valido?: {{confirmPassword.valid}}</pre>
+                            </div>
+
                         </div>
                     </div>
+
                     <div ngModelGroup="address" #addressRef="ngModelGroup">
                         <div class="row">
                             <div class="col-sm-6 form-group">
@@ -120,7 +139,7 @@
                         </div>
                         <div class="form-group">
                             <label>Country</label>
-                            <select class="form-control" name="country" ngModel="" #countryRef="ngModel" required>
+                            <select class="form-control" name="country" ngModel #countryRef="ngModel" required>
                                 <option value="CA">Canada</option>
                                 <option value="IN">India</option>
                                 <option value="SW">Switzerland</option>
