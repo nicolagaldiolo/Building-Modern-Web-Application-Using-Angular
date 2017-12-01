@@ -25,26 +25,29 @@ var AppComponent = (function () {
         //const textOb$ = Observable.fromEvent(this.text.nativeElement, 'keyup').map((event: Event) => (<HTMLInputElement>event.target).value);
         //textOb$.subscribe(res => this.message = res);
         // METODO 2 (Best Practice) creo due observable distinti ma li convergo in uno unico
-        var btnOb$ = Observable_1.Observable.fromEvent(this.btn.nativeElement, 'click').map(function (event) { return 'Hello Angular, RxJS!'; }); // nativeElement mi permettere di accedere al relativo oggetto dom
-        var textOb$ = Observable_1.Observable.fromEvent(this.text.nativeElement, 'keyup').map(function (event) { return event.target.value; });
-        Observable_1.Observable.merge(btnOb$, textOb$).subscribe(function (res) { return _this.message = res; }); //il metodo merge() mi permette di unire 2 observable e crearne uno unico al quale mi iscrivo con subscribe()
+        var btnOb$ = Observable_1.Observable.fromEvent(this.btn.nativeElement, 'click')
+            .map(function (event) { return 'Hello Angular, RxJS!'; });
+        // nativeElement mi permettere di accedere al relativo oggetto dom
+        var textOb$ = Observable_1.Observable.fromEvent(this.text.nativeElement, 'keyup')
+            .map(function (event) { return event.target.value; });
+        Observable_1.Observable.merge(btnOb$, textOb$).subscribe(function (res) { return _this.message = res; });
+        //il metodo merge() mi permette di unire 2 observable e crearne uno unico al quale mi iscrivo con subscribe()
     };
-    __decorate([
-        core_1.ViewChild('btn'),
-        __metadata("design:type", typeof (_a = typeof core_1.ElementRef !== "undefined" && core_1.ElementRef) === "function" && _a || Object)
-    ], AppComponent.prototype, "btn", void 0);
-    __decorate([
-        core_1.ViewChild('text'),
-        __metadata("design:type", typeof (_b = typeof core_1.ElementRef !== "undefined" && core_1.ElementRef) === "function" && _b || Object)
-    ], AppComponent.prototype, "text", void 0);
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'app-root',
-            template: "\n        <div class=\"container p-4\">\n            <input #text class=\"form-control mt-2\" />\n            <button #btn class=\"btn btn-primary mt-3\">Show Message!</button>\n            <hr>\n            <h1 class=\"mt-4\">Output: {{message}}</h1>\n        </div>\n    "
-        })
-    ], AppComponent);
     return AppComponent;
-    var _a, _b;
 }());
+__decorate([
+    core_1.ViewChild('btn'),
+    __metadata("design:type", core_1.ElementRef)
+], AppComponent.prototype, "btn", void 0);
+__decorate([
+    core_1.ViewChild('text'),
+    __metadata("design:type", core_1.ElementRef)
+], AppComponent.prototype, "text", void 0);
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'app-root',
+        template: "\n        <div class=\"container p-4\">\n            <input #text class=\"form-control mt-2\" />\n            <button #btn class=\"btn btn-primary mt-3\">Show Message!</button>\n            <hr>\n            <h1 class=\"mt-4\">Output: {{message}}</h1>\n        </div>\n    "
+    })
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

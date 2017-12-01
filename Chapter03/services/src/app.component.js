@@ -34,14 +34,14 @@ var AppComponent = (function () {
         this.selectedBook = null;
         this.booksList = this.bookStoreService.deleteBook(isbn);
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'books-list',
-            templateUrl: './app.component.html',
-        }),
-        __metadata("design:paramtypes", [book_store_service_1.BookStoreService])
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'books-list',
+        templateUrl: './app.component.html',
+    }),
+    __metadata("design:paramtypes", [book_store_service_1.BookStoreService])
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

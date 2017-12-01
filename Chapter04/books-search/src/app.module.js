@@ -15,18 +15,18 @@ var book_search_component_1 = require("./books/book-search/book-search.component
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [
-                app_component_1.AppComponent,
-                book_search_component_1.BookSearchComponent,
-                books_list_component_1.BookListComponent
-            ],
-            bootstrap: [app_component_1.AppComponent],
-        })
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+        declarations: [
+            app_component_1.AppComponent,
+            book_search_component_1.BookSearchComponent,
+            books_list_component_1.BookListComponent
+        ],
+        bootstrap: [app_component_1.AppComponent],
+    })
+], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

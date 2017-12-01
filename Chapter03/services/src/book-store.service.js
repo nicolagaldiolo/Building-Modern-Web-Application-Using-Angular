@@ -1,6 +1,6 @@
-"use strict";
 // Un service in Angular è semplicemente una classe con lo scopo di essere un access point per tutta l'app. Può essere visto un pò come lo stato di React
 // Il servizio è instanziato a livello di modulo e ha visibilità su tutto il modulo e componenti figli. è qualcosa che sta al di sopra dei componenti e vive in tutto il modulo.
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -30,14 +30,14 @@ var BookStoreService = (function () {
         this.booksList = this.booksList.filter(function (book) { return book.isbn !== isbn; });
         return this.booksList;
     };
-    BookStoreService = __decorate([
-        core_1.Injectable()
-        // il decoratore @Injectable() di per sè non fa nulla, è un decoratore vuoto. Con il decoratore @Injectable stiamo dicendo che Angular può iniettare delle dipendenze
-        // all'interno di questo servizio e di conseguenza questa classe entra nel "ciclo di vita" di Angular
-        ,
-        __metadata("design:paramtypes", [console_loggerservice_1.ConsoleLoggerService])
-    ], BookStoreService);
     return BookStoreService;
 }());
+BookStoreService = __decorate([
+    core_1.Injectable()
+    // il decoratore @Injectable() di per sè non fa nulla, è un decoratore vuoto. Con il decoratore @Injectable stiamo dicendo che Angular può iniettare delle dipendenze
+    // all'interno di questo servizio e di conseguenza questa classe entra nel "ciclo di vita" di Angular
+    ,
+    __metadata("design:paramtypes", [console_loggerservice_1.ConsoleLoggerService])
+], BookStoreService);
 exports.BookStoreService = BookStoreService;
 //# sourceMappingURL=book-store.service.js.map

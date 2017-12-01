@@ -32,10 +32,15 @@ export class AppComponent implements OnInit {
 
       // METODO 2 (Best Practice) creo due observable distinti ma li convergo in uno unico
 
-      const btnOb$ = Observable.fromEvent(this.btn.nativeElement, 'click').map(event => 'Hello Angular, RxJS!'); // nativeElement mi permettere di accedere al relativo oggetto dom
-      const textOb$ = Observable.fromEvent(this.text.nativeElement, 'keyup').map((event: Event) => (<HTMLInputElement>event.target).value);
+      const btnOb$ = Observable.fromEvent(this.btn.nativeElement, 'click')
+          .map(event => 'Hello Angular, RxJS!');
+      // nativeElement mi permettere di accedere al relativo oggetto dom
 
-      Observable.merge(btnOb$, textOb$).subscribe(res => this.message = res); //il metodo merge() mi permette di unire 2 observable e crearne uno unico al quale mi iscrivo con subscribe()
+      const textOb$ = Observable.fromEvent(this.text.nativeElement, 'keyup')
+          .map((event: Event) => (<HTMLInputElement>event.target).value);
+
+      Observable.merge(btnOb$, textOb$).subscribe(res => this.message = res);
+      //il metodo merge() mi permette di unire 2 observable e crearne uno unico al quale mi iscrivo con subscribe()
 
     }
 }

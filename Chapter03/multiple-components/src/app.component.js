@@ -20,13 +20,13 @@ var AppComponent = (function () {
         this.selectedBook = null;
         this.booksList = this.booksList.filter(function (book) { return book.isbn !== isbn; });
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'books-list',
-            templateUrl: './app.component.html'
-        })
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'books-list',
+        templateUrl: './app.component.html'
+    })
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

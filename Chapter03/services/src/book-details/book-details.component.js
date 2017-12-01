@@ -18,21 +18,21 @@ var BookDetailsComponent = (function () {
     BookDetailsComponent.prototype.deleteBook = function () {
         this.onDelete.emit(this.bookInfo.isbn);
     };
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", book_1.Book)
-    ], BookDetailsComponent.prototype, "bookInfo", void 0);
-    __decorate([
-        core_1.Output(),
-        __metadata("design:type", Object)
-    ], BookDetailsComponent.prototype, "onDelete", void 0);
-    BookDetailsComponent = __decorate([
-        core_1.Component({
-            selector: 'book-details',
-            templateUrl: './book-details.component.html'
-        })
-    ], BookDetailsComponent);
     return BookDetailsComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", book_1.Book)
+], BookDetailsComponent.prototype, "bookInfo", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], BookDetailsComponent.prototype, "onDelete", void 0);
+BookDetailsComponent = __decorate([
+    core_1.Component({
+        selector: 'book-details',
+        templateUrl: './book-details.component.html'
+    })
+], BookDetailsComponent);
 exports.BookDetailsComponent = BookDetailsComponent;
 //# sourceMappingURL=book-details.component.js.map
