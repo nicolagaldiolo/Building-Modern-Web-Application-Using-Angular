@@ -89,6 +89,42 @@
       "published": "December 2012",
       "description": "Kinect has been a game-changer in the world of motion games and applications since its first release. It has been touted as a controller for Microsoft Xbox but is much more than that. The developer version of Kinect, Kinect for Windows SDK, provides developers with the tools to develop applications that run on Windows. You can use this to develop applications that make interaction with your computer hands-free.",
       "coverImage": "https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/2380OT.jpg"
+    },
+    {
+      "isbn": "1234567",
+      "title": "Titolo del nuovo libro",
+      "authors": "Nicola Galdiolo",
+      "published": "21/08/1987",
+      "description": "Descrizione del libro",
+      "coverImage": "http://lorempixel.com/302/373/",
+      "id": 11
+    },
+    {
+      "isbn": "",
+      "title": "",
+      "authors": "",
+      "published": "",
+      "description": "",
+      "coverImage": "http://lorempixel.com/302/373/",
+      "id": 12
+    },
+    {
+      "isbn": "",
+      "title": "",
+      "authors": "",
+      "published": "",
+      "description": "",
+      "coverImage": "http://lorempixel.com/302/373/",
+      "id": 13
+    },
+    {
+      "isbn": "",
+      "title": "",
+      "authors": "",
+      "published": "",
+      "description": "",
+      "coverImage": "http://lorempixel.com/302/373/",
+      "id": 14
     }
   ]
 }
