@@ -2,7 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'about-page',
-  template: '<h2>This is About Page</h2>',
+  template: `
+    <div>
+        <h4>{{heading}}</h4>
+        <p>{{content}}</p>
+    </div>
+  `,
 })
 export class AboutComponent {
+  heading: string = 'This is about page';
+  content: string = '';
 }
