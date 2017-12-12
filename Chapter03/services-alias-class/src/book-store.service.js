@@ -33,4 +33,4 @@ var BookStoreService = (function () {
     return BookStoreService;
 }());
 exports.BookStoreService = BookStoreService;
-//# sourceMappingURL=book-store.service.js.map
+//# sourceMappingURL=book-store.service.ts.js.map

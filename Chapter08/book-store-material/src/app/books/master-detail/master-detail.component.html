@@ -1,0 +1,28 @@
+<div fxLayout="column" fxFlex>
+  <h2 class="page-title">Books List Master Detail Page</h2>
+  <mat-sidenav-container flexLayout-="row" fxFlex class="books-list">
+    <mat-sidenav mode="side" opened>
+      <mat-nav-list>
+        <mat-list-item *ngFor="let book of booksList" (click)="selectedBook = book">
+          <img mat-list-avatar [src]="book.coverImage" />
+          <h2 mat-line>{{book.title}}</h2>
+          <p mat-line> {{book.authors}} </p>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <div class="books-list-item" fxFlex>
+      <div *ngIf="selectedBook" class="books-list-item--detail" fxLayout="row" fxFlex.sm="column">
+        <div class="books-list-item--coverimage">
+          <img [src]="selectedBook.coverImage" />
+        </div>
+        <div class="books-list-item--content" fxFlex>
+          <h3>{{selectedBook.title}}</h3>
+          <p>{{selectedBook.authors}}</p>
+          <p>{{selectedBook.published}}</p>
+          <p>ISBN: {{selectedBook.isbn}}</p>
+          <p>{{selectedBook.description}}</p>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-container>
+</div>

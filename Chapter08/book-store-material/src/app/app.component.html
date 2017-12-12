@@ -1,0 +1,38 @@
+<div fxLayout="column" fxFlex>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Book Store</span>
+    <span class="spacer"></span>
+    <button mat-mini-fab (click)="openAddBookDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlex>
+    <mat-sidenav mode="over" #sidenav>
+      <mat-nav-list>
+        <mat-list-item *ngFor="let link of links">
+          <p>{{link.name}}</p>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <div class="content" fxLayout="column" fxFlex>
+      <mat-tab-group>
+        <mat-tab label="Master Detail">
+          <div fxFlex class="master-detail-container">
+            <bl-master-detail fxFlex></bl-master-detail>
+          </div>
+        </mat-tab>
+        <mat-tab label="List">
+          <div fxFlex class="books-list-container">
+            <bl-list fxFlex></bl-list>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-sidenav-container>
+
+</div>
