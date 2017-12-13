@@ -1,0 +1,13 @@
+/* style.scss è il foglio di stile base dove importo indigo-pink.css da angular-material */
+/* Questo è il foglio di stile custom creato utilizzando le api di angular-material */
+
+@import '~@angular/material/_theming';
+
+@include mat-core();
+
+$primary: mat-palette( $mat-red );
+$accent: mat-palette( $mat-blue );
+
+$theme: mat-light-theme( $primary, $accent );
+
+@include angular-material-theme( $theme );

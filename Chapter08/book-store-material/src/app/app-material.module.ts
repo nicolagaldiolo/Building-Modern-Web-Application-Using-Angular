@@ -10,6 +10,10 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 const MATERIAL_MODULES = [
   MatToolbarModule,
@@ -22,7 +26,11 @@ const MATERIAL_MODULES = [
   MatCardModule,
   MatInputModule,
   MatDialogModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatCheckboxModule,
+  MatSlideToggleModule
 ]
 
 @NgModule({

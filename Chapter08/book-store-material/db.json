@@ -91,40 +91,31 @@
       "coverImage": "https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/2380OT.jpg"
     },
     {
-      "isbn": "1234567",
-      "title": "Titolo del nuovo libro",
-      "authors": "Nicola Galdiolo",
-      "published": "21/08/1987",
-      "description": "Descrizione del libro",
-      "coverImage": "http://lorempixel.com/302/373/",
+      "title": "fggfh",
+      "authors": "rthrth",
+      "published": "rthrth",
+      "isbn": "hrthrthtr",
+      "coverImage": "https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/2380OT.jpg",
+      "description": "htrhrthrth",
       "id": 11
     },
     {
-      "isbn": "",
-      "title": "",
-      "authors": "",
-      "published": "",
-      "description": "",
-      "coverImage": "http://lorempixel.com/302/373/",
+      "title": "cdscds",
+      "authors": "cdscsdc",
+      "published": "dscsc",
+      "isbn": "sdcdscsdc",
+      "coverImage": "https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/2380OT.jpg",
+      "description": "dscdsc",
       "id": 12
     },
     {
-      "isbn": "",
-      "title": "",
-      "authors": "",
-      "published": "",
-      "description": "",
-      "coverImage": "http://lorempixel.com/302/373/",
+      "title": "fggfh",
+      "authors": "xasxas",
+      "published": "rthrth",
+      "isbn": "asassa",
+      "coverImage": "https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/2380OT.jpg",
+      "description": "sassasa",
       "id": 13
-    },
-    {
-      "isbn": "",
-      "title": "",
-      "authors": "",
-      "published": "",
-      "description": "",
-      "coverImage": "http://lorempixel.com/302/373/",
-      "id": 14
     }
   ]
 }

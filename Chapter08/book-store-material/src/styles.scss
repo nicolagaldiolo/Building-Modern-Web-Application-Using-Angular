@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Questo è il foglio di stile base dove importo indigo-pink.css da angular-material */
+/* themes.scss è un tema custom creato utilizzando le api di angular-material */
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
@@ -23,6 +26,10 @@ app-root {
   padding: 1rem;
 }
 
+.m-t {
+  margin-top: 1rem;
+}
+
 .page-title {
   font-size: 1.25rem;
   font-weight: 300;
@@ -31,7 +38,12 @@ app-root {
 }
 
 .spinner {
-  margin:auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px !important;
+  width: 50px !important;
 }
 
 .spacer {
